@@ -109,6 +109,11 @@ class AlienInvasion:
         """
         self._check_fleet_edges()
         self.aliens.update()
+        
+        # Look for alien-ship collisions.
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            print("Ship hit!!!")
+            
     
     def _create_fleet(self):
         """Create the fleet of aliens."""
@@ -166,5 +171,3 @@ if __name__ == '__main__':
     # Make a game instance, and run the game.
     ai = AlienInvasion()
     ai.run_game()
-
-# This is a pull request.
