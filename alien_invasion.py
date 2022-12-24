@@ -73,7 +73,7 @@ class AlienInvasion:
                 self._check_play_button(mouse_pos)
             
     def _check_play_button(self, mouse_pos):
-        """Start a new game when the player clicks play or hits Enter."""
+        """Start a new game when the player clicks play."""
         button_clicked = self.play_button.rect.collidepoint(mouse_pos)
 
         if button_clicked and not self.stats.game_active:
@@ -107,6 +107,8 @@ class AlienInvasion:
         elif event.key == pygame.K_q:
             pygame.quit()
             sys.exit()
+        
+        # Start game with Enter instead of clicking the play button.
         elif event.key == pygame.K_RETURN and not self.stats.game_active:
             # Reset the game settings.
             self.settings.initialize_dynamic_settings()
