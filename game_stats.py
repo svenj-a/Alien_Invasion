@@ -17,8 +17,11 @@ class GameStats:
         # Start game in an inactive state.
         self.game_active = False
         
-        # High score should never be reset.
+        # Session high score resets when program is closed.
         self.high_score = 0
+        
+        # All time high score should never be reset.
+        self.alltime_high = 0
                 
     def reset_stats(self):
         """Initialize statistics that can change during the game."""
