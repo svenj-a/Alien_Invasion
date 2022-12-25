@@ -11,8 +11,6 @@ from pygame.sprite import Group
 
 from ship import Ship
 
-import shelve
-
 class Scoreboard:
         """A class to report scoring information."""
         
