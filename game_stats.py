@@ -21,7 +21,9 @@ class GameStats:
         self.high_score = 0
         
         # All time high score should never be reset.
-        self.alltime_high = 0
+        self.alltime_high_file = open('alltime_high.txt', 'r')
+        self.alltime_high = self.alltime_high_file.read()
+        self.alltime_high_file.close()
                 
     def reset_stats(self):
         """Initialize statistics that can change during the game."""
